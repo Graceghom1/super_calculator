@@ -1,4 +1,4 @@
-name: Dependabot
+name: Dependabot_yml
 
 on:
   schedule:
@@ -8,13 +8,13 @@ jobs:
   dependabot:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Action Checkout 
         uses: actions/checkout@v3
-      - name: Setup Go
+      - name: Action Setup Go
         uses: actions/setup-go@v4
         with:
           go-version: '^1.13.1'
-      - name: Dependabot
+      - name: Action Dependabot
         uses: dependabot/dependabot-action@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
