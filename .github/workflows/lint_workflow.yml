@@ -1,4 +1,4 @@
-name: Lint Workflow
+name: Lint_Workflow
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout le code
+    - name: Action Checkout 
       uses: actions/checkout@v3
 
     - name: Static analysis with Semgrep
