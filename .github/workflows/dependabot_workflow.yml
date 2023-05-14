@@ -1,8 +1,8 @@
-name: Dependabot_yml
+name: Dependabot_Workflow
 
 on:
   schedule:
-    - cron: '58 8 * * *'
+    - cron: '58 16 * * *'
 
 jobs:
   dependabot:
@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Action Checkout 
         uses: actions/checkout@v3
+      - name: optimisation des dependances avec cache
+        uses: actions/cache@v3
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
       - name: Action Setup Go
         uses: actions/setup-go@v4
         with:
